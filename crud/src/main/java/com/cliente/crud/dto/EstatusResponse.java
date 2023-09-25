@@ -1,8 +1,11 @@
-
-
 package com.cliente.crud.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+
+@AllArgsConstructor
+@Getter
 public enum EstatusResponse {
 
 
@@ -11,11 +14,9 @@ public enum EstatusResponse {
     ERROR(1, 0, "Código de esatus error");
 
 
-    private EstatusResponse(int id, int estatus, String descripcion) {
-        this.id = id;
-        this.estatus = estatus;
-        this.descripcion = descripcion;
-    }
+    private int id;
+    private int estatus;
+    private String descripcion;
 
 
     public static EstatusResponse valueOf(int id) {
@@ -25,38 +26,6 @@ public enum EstatusResponse {
             }
         }
         throw new IllegalArgumentException("Id '" + id + "' inválido para obtener enum EstatusResponse");
-    }
-
-    private int id;
-    private int estatus;
-    private String descripcion;
-
-
-    public int getId() {
-        return id;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getEstatus() {
-        return estatus;
-    }
-
-
-    public void setEstatus(int estatus) {
-        this.estatus = estatus;
-    }
-
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
 }
